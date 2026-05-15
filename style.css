@@ -1,43 +1,38 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, sans-serif;
   background: #0a0a0a;
   color: #fff;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .container {
   text-align: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 860px;
   padding: 20px;
 }
 
 .time {
-  font-size: 6.5rem;
+  font-size: 6.2rem;
   font-weight: 300;
-  letter-spacing: -4px;
-  margin-bottom: 8px;
+  letter-spacing: -3px;
+  margin-bottom: 6px;
 }
 
 .date {
-  font-size: 1.4rem;
-  opacity: 0.8;
-  margin-bottom: 60px;
+  font-size: 1.35rem;
+  opacity: 0.75;
+  margin-bottom: 55px;
 }
 
 .search-container {
   max-width: 680px;
-  margin: 0 auto 70px;
+  margin: 0 auto 65px;
 }
 
 #urlInput {
@@ -45,23 +40,21 @@ body {
   padding: 16px 24px;
   font-size: 1.1rem;
   background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 12px;
   color: white;
   outline: none;
-  transition: all 0.3s;
 }
 
 #urlInput:focus {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.3);
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.13);
+  border-color: #aaa;
 }
 
 .apps {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 16px;           /* closer */
   justify-items: center;
 }
 
@@ -73,18 +66,17 @@ body {
   transition: transform 0.2s;
 }
 
-.app:hover {
-  transform: scale(1.12);
-}
+.app:hover { transform: scale(1.15); }
 
 .app img {
-  width: 58px;
-  height: 58px;
-  margin-bottom: 8px;
+  width: 52px;     /* smaller */
+  height: 52px;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .app span {
-  font-size: 0.9rem;
-  opacity: 0.9;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  opacity: 0.85;
 }
