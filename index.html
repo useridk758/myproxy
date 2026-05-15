@@ -3,42 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unblocked Searcher</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #121212; color: white; }
-    input { padding: 15px; width: 60%; font-size: 18px; border-radius: 8px; border: none; }
-    button { padding: 15px 30px; font-size: 18px; margin-left: 10px; }
-    #results { margin-top: 30px; }
-  </style>
+  <title>New Tab</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🚀 Unblocked Web Searcher</h1>
-  <p>Powered by Scramjet Proxy</p>
-  
-  <input type="text" id="url" placeholder="Enter URL or search (e.g. google.com)" autofocus>
-  <button onclick="go()">Go →</button>
+  <div class="container">
+    <div class="time" id="time">16:05</div>
+    <div class="date" id="date">Friday, May 15</div>
 
-  <div id="results"></div>
+    <div class="search-container">
+      <input type="text" id="urlInput" placeholder="Search the web..." autofocus>
+    </div>
 
-  <script>
-    function go() {
-      let input = document.getElementById('url').value.trim();
-      if (!input) return;
+    <div class="apps">
+      <div class="app" onclick="quickGo('https://youtube.com')"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YT"><span>YouTube</span></div>
+      <div class="app" onclick="quickGo('https://github.com')"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GH"><span>GitHub</span></div>
+      <div class="app" onclick="quickGo('https://discord.com')"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968890.png" alt="DC"><span>Discord</span></div>
+      <div class="app" onclick="quickGo('https://x.com')"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" alt="X"><span>Twitter</span></div>
+      <div class="app" onclick="quickGo('https://reddit.com')"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png" alt="Reddit"><span>Reddit</span></div>
+      
+      <div class="app" onclick="quickGo('https://spotify.com')"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968895.png" alt="Spotify"><span>Spotify</span></div>
+      <div class="app" onclick="quickGo('https://netflix.com')"><img src="https://cdn-icons-png.flaticon.com/512/732/732228.png" alt="Netflix"><span>Netflix</span></div>
+      <div class="app" onclick="quickGo('https://twitch.tv')"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968971.png" alt="Twitch"><span>Twitch</span></div>
+      <div class="app" onclick="quickGo('https://gmail.com')"><img src="https://cdn-icons-png.flaticon.com/512/5968/5969054.png" alt="Gmail"><span>Gmail</span></div>
+      <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/5968/5969003.png" alt="Add"><span>Add</span></div>
+    </div>
+  </div>
 
-      // Add https:// if missing
-      if (!input.startsWith('http')) {
-        input = 'https://' + input;
-      }
-
-      // Replace with your Scramjet prefix (see below)
-      const proxyPrefix = '/scramjet/';  // or whatever your setup uses
-      window.location.href = proxyPrefix + input;
-    }
-
-    // Optional: Search on Enter
-    document.getElementById('url').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') go();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
