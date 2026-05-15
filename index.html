@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unblocked Searcher</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #121212; color: white; }
+    input { padding: 15px; width: 60%; font-size: 18px; border-radius: 8px; border: none; }
+    button { padding: 15px 30px; font-size: 18px; margin-left: 10px; }
+    #results { margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <h1>🚀 Unblocked Web Searcher</h1>
+  <p>Powered by Scramjet Proxy</p>
+  
+  <input type="text" id="url" placeholder="Enter URL or search (e.g. google.com)" autofocus>
+  <button onclick="go()">Go →</button>
+
+  <div id="results"></div>
+
+  <script>
+    function go() {
+      let input = document.getElementById('url').value.trim();
+      if (!input) return;
+
+      // Add https:// if missing
+      if (!input.startsWith('http')) {
+        input = 'https://' + input;
+      }
+
+      // Replace with your Scramjet prefix (see below)
+      const proxyPrefix = '/scramjet/';  // or whatever your setup uses
+      window.location.href = proxyPrefix + input;
+    }
+
+    // Optional: Search on Enter
+    document.getElementById('url').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') go();
+    });
+  </script>
+</body>
+</html>
